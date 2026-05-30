@@ -3,6 +3,9 @@ name: Deploy Jekyll Site
 on:
   push:
     branches: [main]
+  workflow_run:
+    workflows: ["Generate Blog Post", "Weekly Strategy Update"]
+    types: [completed]
   workflow_dispatch: {}
 
 permissions:
