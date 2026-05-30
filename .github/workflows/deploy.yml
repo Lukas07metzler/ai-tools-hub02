@@ -19,15 +19,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
+
+      - id: pages
+        uses: actions/configure-pages@v5
+
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.1"
-          bundler-cache: true
+          ruby-version: "3.2"
+          bundler-cache: false
+
+      - name: Install gems
+        run: bundle install
+
       - name: Build Jekyll site
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+
       - uses: actions/upload-pages-artifact@v3
 
   deploy:
