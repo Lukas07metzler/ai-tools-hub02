@@ -2,7 +2,7 @@
   "_instructions": "Replace all YOUR_AFFILIATE_ID placeholders with your actual IDs after signing up. See SETUP.md for signup links.",
   "jasper": {
     "name": "Jasper AI",
-    "url": "https://www.jasper.ai/?fpr=YOUR_AFFILIATE_ID",
+    "url": "https://www.jasper.ai",
     "commission": "30% recurring",
     "cta": "Try Jasper AI Free",
     "description": "Best for professional content teams",
@@ -11,7 +11,7 @@
   },
   "writesonic": {
     "name": "Writesonic",
-    "url": "https://writesonic.com/?via=YOUR_AFFILIATE_ID",
+    "url": "https://writesonic.com",
     "commission": "30% recurring",
     "cta": "Try Writesonic Free",
     "description": "Best budget AI writing tool",
@@ -20,7 +20,7 @@
   },
   "copy_ai": {
     "name": "Copy.ai",
-    "url": "https://www.copy.ai/?via=YOUR_AFFILIATE_ID",
+    "url": "https://www.copy.ai",
     "commission": "45% first payment",
     "cta": "Get Copy.ai Free Plan",
     "description": "Best for marketing copy",
@@ -29,7 +29,7 @@
   },
   "grammarly": {
     "name": "Grammarly",
-    "url": "https://grammarly.com/referrals/YOUR_AFFILIATE_ID",
+    "url": "https://grammarly.com",
     "commission": "$20 per paid conversion",
     "cta": "Try Grammarly Free",
     "description": "Best grammar and writing checker",
@@ -38,7 +38,7 @@
   },
   "surfer_seo": {
     "name": "Surfer SEO",
-    "url": "https://surferseo.com/?fp_ref=YOUR_AFFILIATE_ID",
+    "url": "https://surferseo.com",
     "commission": "25% recurring",
     "cta": "Try Surfer SEO",
     "description": "Best AI SEO writing tool",
@@ -47,7 +47,7 @@
   },
   "canva": {
     "name": "Canva Pro",
-    "url": "https://partner.canva.com/YOUR_AFFILIATE_ID",
+    "url": "https://canva.com",
     "commission": "Up to 80% first payment",
     "cta": "Try Canva Pro Free",
     "description": "Best AI design tool",
@@ -56,7 +56,7 @@
   },
   "notion": {
     "name": "Notion AI",
-    "url": "https://affiliate.notion.so/YOUR_AFFILIATE_ID",
+    "url": "https://notion.so",
     "commission": "50% first year",
     "cta": "Try Notion AI",
     "description": "Best AI-powered notes and docs",
@@ -65,7 +65,7 @@
   },
   "rytr": {
     "name": "Rytr",
-    "url": "https://rytr.me/?via=YOUR_AFFILIATE_ID",
+    "url": "https://rytr.me",
     "commission": "30% recurring",
     "cta": "Try Rytr Free",
     "description": "Best budget AI writer",

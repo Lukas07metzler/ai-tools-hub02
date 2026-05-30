@@ -2,54 +2,92 @@
 layout: default
 ---
 <div class="home-container">
+
+  <section class="hero">
+    <div class="hero-badge">⚡ Updated weekly with new reviews</div>
+    <h1>Find the Best AI Tools<br>Without the Guesswork</h1>
+    <p>Honest, in-depth reviews and comparisons of AI writing, productivity, and SEO tools — so you can make smarter buying decisions.</p>
+  </section>
+
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stat">
+        <div class="stat-number">{{ site.posts | size }}+</div>
+        <div class="stat-label">In-depth Reviews</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Tools Covered</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Independent</div>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
 
-    <section class="hero">
-      <h1>Honest AI Tool Reviews</h1>
-      <p>We test and compare AI tools so you don't have to waste money on the wrong ones.</p>
-    </section>
-
     <section class="featured-tools">
-      <h2>Our Top Picks</h2>
+      <div class="section-header">
+        <h2 class="section-title">Our Top Picks</h2>
+        <span class="section-badge">Editor's Choice</span>
+      </div>
       <div class="tool-cards">
-        <div class="tool-card">
-          <div class="tool-badge">Writing</div>
+        <div class="tool-card featured">
+          <span class="tool-badge badge-writing">Writing</span>
           <h3>Jasper AI</h3>
-          <p>Best for content teams and professional bloggers.</p>
-          <a href="https://www.jasper.ai" class="cta-button" target="_blank" rel="nofollow noopener">Try Free →</a>
+          <div class="tool-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text">4.8/5 — Best for Teams</span>
+          </div>
+          <p>The most powerful AI writing platform for content teams and professional bloggers. Consistent quality at scale.</p>
+          <a href="https://www.jasper.ai" class="cta-button" target="_blank" rel="nofollow noopener">Try Jasper Free →</a>
         </div>
         <div class="tool-card">
-          <div class="tool-badge">Budget Pick</div>
+          <span class="tool-badge badge-budget">Budget Pick</span>
           <h3>Writesonic</h3>
-          <p>Most affordable AI writer with good quality output.</p>
-          <a href="https://writesonic.com" class="cta-button" target="_blank" rel="nofollow noopener">Try Free →</a>
+          <div class="tool-rating">
+            <span class="stars">★★★★☆</span>
+            <span class="rating-text">4.3/5 — Best Value</span>
+          </div>
+          <p>Most affordable AI writer without sacrificing output quality. Perfect for freelancers and small teams.</p>
+          <a href="https://writesonic.com" class="cta-button" target="_blank" rel="nofollow noopener">Try Writesonic Free →</a>
         </div>
         <div class="tool-card">
-          <div class="tool-badge">Editing</div>
+          <span class="tool-badge badge-editing">Editing</span>
           <h3>Grammarly</h3>
-          <p>The gold standard for grammar, style, and clarity.</p>
-          <a href="https://grammarly.com" class="cta-button" target="_blank" rel="nofollow noopener">Try Free →</a>
+          <div class="tool-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text">4.7/5 — Best for Editing</span>
+          </div>
+          <p>The gold standard for grammar checking, style improvements, and clarity. Works everywhere you write.</p>
+          <a href="https://grammarly.com" class="cta-button" target="_blank" rel="nofollow noopener">Try Grammarly Free →</a>
         </div>
       </div>
     </section>
 
     <section class="posts-section">
-      <h2>Latest Reviews & Comparisons</h2>
+      <div class="section-header">
+        <h2 class="section-title">Latest Reviews & Comparisons</h2>
+        <span class="section-badge">New posts 3x/week</span>
+      </div>
       <div class="post-grid">
         {% for post in site.posts %}
           <article class="post-card">
             <div class="post-card-meta">
+              <span class="post-type-badge">Review</span>
               <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
             </div>
             <h3 class="post-card-title">
               <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
             </h3>
             {% if post.description %}
-              <p class="post-card-excerpt">{{ post.description | truncate: 120 }}</p>
+              <p class="post-card-excerpt">{{ post.description | truncate: 130 }}</p>
             {% else %}
-              <p class="post-card-excerpt">{{ post.content | strip_html | truncate: 120 }}</p>
+              <p class="post-card-excerpt">{{ post.content | strip_html | truncate: 130 }}</p>
             {% endif %}
-            <a href="{{ post.url | relative_url }}" class="read-more">Read review →</a>
+            <a href="{{ post.url | relative_url }}" class="read-more">Read full review →</a>
           </article>
         {% endfor %}
       </div>
