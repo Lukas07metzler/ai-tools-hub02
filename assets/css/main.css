@@ -369,6 +369,50 @@ body {
 .post-content tbody tr:last-child td { border-bottom: none; }
 .post-content tbody tr:hover td { background: var(--accent-light); }
 
+/* ── Verdict box ── */
+.verdict-box {
+  border-left: 4px solid #10b981;
+  background: #f0fdf4;
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  margin: 24px 0;
+}
+
+/* ── Pros / cons grid ── */
+.pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 24px 0;
+}
+@media (max-width: 640px) {
+  .pros-cons { grid-template-columns: 1fr; }
+}
+.pros-cons ul { list-style: none; padding: 0; margin: 0; }
+.pros-cons li { margin-bottom: 8px; font-size: 0.97rem; padding-left: 4px; }
+.pros-cons .pros li::before {
+  content: "✓ ";
+  color: #10b981;
+  font-weight: bold;
+}
+.pros-cons .cons li::before {
+  content: "✗ ";
+  color: #ef4444;
+  font-weight: bold;
+}
+
+/* ── Blockquote ── */
+.post-content blockquote {
+  border-left: 4px solid var(--accent);
+  background: var(--accent-light);
+  padding: 16px 20px;
+  margin: 24px 0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-style: italic;
+  color: var(--text-muted);
+}
+.post-content blockquote p { margin-bottom: 0; }
+
 /* ── Affiliate CTA box ── */
 .affiliate-cta {
   background: linear-gradient(135deg, #eef2ff, #e0e7ff);
@@ -382,6 +426,15 @@ body {
   flex-wrap: wrap;
 }
 .affiliate-cta .cta-button { width: auto; white-space: nowrap; }
+.affiliate-cta-action { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.affiliate-cta-secure {
+  font-size: 0.75rem;
+  color: #16a34a;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
 .disclaimer { font-size: 0.75rem; color: var(--text-muted); font-style: italic; }
 
 /* ── Post footer ── */

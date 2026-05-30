@@ -46,12 +46,16 @@ Return ONLY a JSON array of strings, no explanation. Example format:
 ["keyword one", "keyword two", ...]
 """
 
-    response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.8,
-        max_tokens=800,
-    )
+    try:
+        response = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.8,
+            max_tokens=800,
+        )
+    except Exception as e:
+        print(f"Error: Groq API call failed while generating keywords: {e}", file=sys.stderr)
+        sys.exit(1)
 
     raw = response.choices[0].message.content.strip()
 
@@ -89,12 +93,16 @@ Based on this data:
 
 Respond in 3 short bullet points, max 50 words each.
 """
-    response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.5,
-        max_tokens=300,
-    )
+    try:
+        response = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.5,
+            max_tokens=300,
+        )
+    except Exception as e:
+        print(f"Error: Groq API call failed while analyzing performance: {e}", file=sys.stderr)
+        return None
     return response.choices[0].message.content.strip()
 
 def main():

@@ -1,0 +1,35 @@
+name: Fix Affiliate URLs in Posts
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Replace broken affiliate URLs
+        run: |
+          find _posts -name "*.md" | xargs sed -i \
+            -e 's|https://www.jasper.ai/?fpr=[^"]*|https://www.jasper.ai|g' \
+            -e 's|https://writesonic.com/?via=[^"]*|https://writesonic.com|g' \
+            -e 's|https://www.copy.ai/?via=[^"]*|https://www.copy.ai|g' \
+            -e 's|https://grammarly.com/referrals/[^"]*|https://grammarly.com|g' \
+            -e 's|https://surferseo.com/?fp_ref=[^"]*|https://surferseo.com|g' \
+            -e 's|https://partner.canva.com/[^"]*|https://canva.com|g' \
+            -e 's|https://affiliate.notion.so/[^"]*|https://notion.so|g' \
+            -e 's|https://rytr.me/?via=[^"]*|https://rytr.me|g' \
+            -e 's|YOUR_AFFILIATE_ID||g'
+
+      - name: Commit fixes
+        run: |
+          git config user.name "SmartAI Fix Bot"
+          git config user.email "bot@smartaipicks.com"
+          git add _posts/
+          git diff --staged --quiet || git commit -m "fix: clean up affiliate URLs in posts"
+          git push

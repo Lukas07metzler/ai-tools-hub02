@@ -2,6 +2,7 @@
 layout: default
 title: "About SmartAI Picks"
 description: "We research and test AI tools so you can make informed decisions."
+permalink: /about/
 ---
 <div class="container" style="max-width:700px; padding: 48px 20px;">
   <h1>About SmartAI Picks</h1>

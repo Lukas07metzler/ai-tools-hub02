@@ -38,6 +38,22 @@ def build_prompt(keyword, affiliates, strategy):
     ]
     affiliate_list = "\n".join(active_affiliates[:4])
 
+    # Detect comparison/vs articles to conditionally inject the head-to-head table section
+    is_comparison = any(
+        marker in keyword.lower()
+        for marker in [" vs ", " vs. ", " versus ", " comparison", " compare", " alternative"]
+    )
+    comparison_table_section = (
+        "\n## Head-to-Head Comparison\n"
+        "\n"
+        "| Feature | [Tool A] | [Tool B] |\n"
+        "|---------|----------|----------|\n"
+        "[4-6 rows covering key differentiators: price, output quality, ease of use, integrations, support]\n"
+        "\n"
+        "[One paragraph below the table summarising who wins which category and why]\n"
+        if is_comparison else ""
+    )
+
     return f"""You are an expert tech blogger writing for SmartAI Picks, an honest AI tools review site.
 
 Write a comprehensive, SEO-optimized blog post targeting this keyword: "{keyword}"
@@ -56,7 +72,20 @@ featured_tool: "[main tool being reviewed]"
 
 # [Same title as above]
 
-[Intro paragraph — hook the reader, state what they'll learn, 100-150 words]
+[Intro — use the PAS formula in this exact order:
+  PROBLEM (1-2 sentences): Name the specific pain the reader is experiencing right now.
+  AGITATION (2-3 sentences): Twist the knife — explain why this problem is costly, time-wasting, or getting worse without a fix.
+  SOLUTION (1-2 sentences): Position this article as the clear answer that resolves their problem.
+  Total intro length: 100-150 words.]
+
+<div class="key-takeaways">
+
+**Key Takeaways**
+- [Most important finding or bottom-line recommendation — one punchy sentence]
+- [Second key insight — concrete and actionable for the reader]
+- [Third key insight — who this is best for and who should look elsewhere]
+
+</div>
 
 ## What Is [Tool/Topic]?
 [Clear explanation, 150-200 words]
@@ -65,11 +94,12 @@ featured_tool: "[main tool being reviewed]"
 [3-5 features with H3 subheadings, each 80-100 words]
 
 ## Pricing Breakdown
+
 | Plan | Price | Best For |
 |------|-------|----------|
 [2-4 rows]
 
-## Pros and Cons
+{comparison_table_section}## Pros and Cons
 **Pros:**
 - [3-5 specific pros]
 
@@ -85,6 +115,23 @@ featured_tool: "[main tool being reviewed]"
 ## Our Verdict
 [Honest conclusion, 150 words. Include affiliate CTA using placeholder: [AFFILIATE_CTA:tool_key]]
 
+## Frequently Asked Questions
+
+**Q: [Most-searched question about this keyword — match "People Also Ask" intent]**
+A: [Direct, self-contained answer in 40-60 words]
+
+**Q: [Second common question — focus on pricing or free tier availability]**
+A: [Direct, self-contained answer in 40-60 words]
+
+**Q: [Third common question — focus on a specific use case or known limitation]**
+A: [Direct, self-contained answer in 40-60 words]
+
+**Q: [Fourth common question — comparison or best alternative angle]**
+A: [Direct, self-contained answer in 40-60 words]
+
+**Q: [Fifth common question — beginner or getting-started angle]**
+A: [Direct, self-contained answer in 40-60 words]
+
 ---
 
 AVAILABLE AFFILIATE TOOLS TO MENTION NATURALLY (use [AFFILIATE_CTA:tool_key] for CTA placement):
@@ -92,21 +139,31 @@ AVAILABLE AFFILIATE TOOLS TO MENTION NATURALLY (use [AFFILIATE_CTA:tool_key] for
 
 Tool keys: jasper, writesonic, copy_ai, grammarly, surfer_seo, canva, notion, rytr
 
-RULES:
+CRITICAL RULES:
 - Be honest — negative points build trust and convert better than fake praise
-- Place max 2 affiliate CTAs per article, only where natural
+- Place max 2 affiliate CTAs per article using ONLY the [AFFILIATE_CTA:key] placeholder — NEVER write raw URLs
 - Don't fabricate specific pricing — use approximate ranges or "check current pricing"
 - Write in US English
+- Tables MUST use proper GFM markdown with header separator row: | Col | Col |\n|-----|-----|\n| val | val |
+- Leave one blank line before and after every table
+- Do NOT include any URLs in the article text — only use [AFFILIATE_CTA:key] placeholders
+- The <div class="key-takeaways"> block MUST appear immediately after the intro, before the first H2
+- The FAQ section MUST be the last section before the closing ---
+- Each FAQ answer must be a self-contained sentence (Google uses these for featured snippets)
 """
 
 def generate_article(client, keyword, affiliates, strategy):
     prompt = build_prompt(keyword, affiliates, strategy)
-    response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.75,
-        max_tokens=3500,
-    )
+    try:
+        response = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.75,
+            max_tokens=3500,
+        )
+    except Exception as e:
+        print(f"Error: Groq API call failed: {e}", file=sys.stderr)
+        sys.exit(1)
     return response.choices[0].message.content
 
 def inject_affiliate_links(content, affiliates):

@@ -46,5 +46,6 @@ jobs:
             echo "No new content to commit."
           else
             git commit -m "post: auto-generate $(date +%Y-%m-%d)"
+            git pull --rebase origin main
             git push
           fi
