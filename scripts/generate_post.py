@@ -34,7 +34,7 @@ def build_prompt(keyword, affiliates, strategy):
     active_affiliates = [
         f"- {v['name']}: {v['description']} (CTA: \"{v['cta']}\")"
         for v in affiliates.values()
-        if v.get("active") and not v["name"].startswith("_")
+        if isinstance(v, dict) and v.get("active")
     ]
     affiliate_list = "\n".join(active_affiliates[:4])
 
