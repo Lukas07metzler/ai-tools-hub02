@@ -1,9 +1,12 @@
 {
   "niche": "AI productivity and writing tools",
   "site_name": "SmartAI Picks",
-  "primary_affiliate_focus": ["writing tools", "productivity AI", "SEO tools"],
+  "primary_affiliate_focus": [
+    "writing tools",
+    "productivity AI",
+    "SEO tools"
+  ],
   "pending_keywords": [
-    "best AI writing assistant for bloggers 2025",
     "Jasper AI review honest",
     "Copy.ai review is it worth it",
     "Writesonic vs Jasper AI comparison",
@@ -44,8 +47,16 @@
     "best AI for podcast show notes",
     "Rytr AI review 2025"
   ],
-  "used_keywords": [],
-  "performance_data": {},
+  "used_keywords": [
+    "best AI writing assistant for bloggers 2025"
+  ],
+  "performance_data": {
+    "best AI writing assistant for bloggers 2025": {
+      "published": "2026-05-30",
+      "clicks": 0,
+      "conversions": 0
+    }
+  },
   "last_strategy_update": "2025-05-30",
   "content_tone": "honest, practical, no hype — real pros and cons",
   "avg_article_length": 1500,
