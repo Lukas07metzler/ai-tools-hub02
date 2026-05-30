@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  {% seo %}
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="{{ "/" | relative_url }}" class="site-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">SmartAI Picks</span>
+      </a>
+      <nav class="site-nav">
+        <a href="{{ "/" | relative_url }}">Reviews</a>
+        <a href="{{ "/comparisons/" | relative_url }}">Comparisons</a>
+        <a href="{{ "/about/" | relative_url }}">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        &copy; {{ site.time | date: "%Y" }} SmartAI Picks &mdash;
+        <a href="{{ "/about/" | relative_url }}">About</a> &middot;
+        <a href="{{ "/feed.xml" | relative_url }}">RSS</a>
+      </p>
+      <p class="disclaimer">
+        This site contains affiliate links. We may earn a commission when you buy through our links, at no extra cost to you.
+        We only recommend tools we've researched thoroughly.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

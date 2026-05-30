@@ -1,0 +1,75 @@
+{
+  "_instructions": "Replace all YOUR_AFFILIATE_ID placeholders with your actual IDs after signing up. See SETUP.md for signup links.",
+  "jasper": {
+    "name": "Jasper AI",
+    "url": "https://www.jasper.ai/?fpr=YOUR_AFFILIATE_ID",
+    "commission": "30% recurring",
+    "cta": "Try Jasper AI Free",
+    "description": "Best for professional content teams",
+    "signup_url": "https://www.jasper.ai/affiliates",
+    "active": true
+  },
+  "writesonic": {
+    "name": "Writesonic",
+    "url": "https://writesonic.com/?via=YOUR_AFFILIATE_ID",
+    "commission": "30% recurring",
+    "cta": "Try Writesonic Free",
+    "description": "Best budget AI writing tool",
+    "signup_url": "https://writesonic.com/affiliate",
+    "active": true
+  },
+  "copy_ai": {
+    "name": "Copy.ai",
+    "url": "https://www.copy.ai/?via=YOUR_AFFILIATE_ID",
+    "commission": "45% first payment",
+    "cta": "Get Copy.ai Free Plan",
+    "description": "Best for marketing copy",
+    "signup_url": "https://www.copy.ai/affiliate",
+    "active": true
+  },
+  "grammarly": {
+    "name": "Grammarly",
+    "url": "https://grammarly.com/referrals/YOUR_AFFILIATE_ID",
+    "commission": "$20 per paid conversion",
+    "cta": "Try Grammarly Free",
+    "description": "Best grammar and writing checker",
+    "signup_url": "https://www.grammarly.com/affiliate",
+    "active": true
+  },
+  "surfer_seo": {
+    "name": "Surfer SEO",
+    "url": "https://surferseo.com/?fp_ref=YOUR_AFFILIATE_ID",
+    "commission": "25% recurring",
+    "cta": "Try Surfer SEO",
+    "description": "Best AI SEO writing tool",
+    "signup_url": "https://surferseo.com/affiliate/",
+    "active": true
+  },
+  "canva": {
+    "name": "Canva Pro",
+    "url": "https://partner.canva.com/YOUR_AFFILIATE_ID",
+    "commission": "Up to 80% first payment",
+    "cta": "Try Canva Pro Free",
+    "description": "Best AI design tool",
+    "signup_url": "https://www.canva.com/affiliates/",
+    "active": true
+  },
+  "notion": {
+    "name": "Notion AI",
+    "url": "https://affiliate.notion.so/YOUR_AFFILIATE_ID",
+    "commission": "50% first year",
+    "cta": "Try Notion AI",
+    "description": "Best AI-powered notes and docs",
+    "signup_url": "https://www.notion.so/affiliates",
+    "active": true
+  },
+  "rytr": {
+    "name": "Rytr",
+    "url": "https://rytr.me/?via=YOUR_AFFILIATE_ID",
+    "commission": "30% recurring",
+    "cta": "Try Rytr Free",
+    "description": "Best budget AI writer",
+    "signup_url": "https://rytr.me/affiliate",
+    "active": true
+  }
+}

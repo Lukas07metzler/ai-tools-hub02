@@ -1,0 +1,43 @@
+title: "SmartAI Picks"
+description: "Honest reviews and comparisons of the best AI tools for productivity, writing, and business."
+baseurl: ""
+url: "https://lukas07metzler.github.io"
+author: "SmartAI Picks"
+lang: en
+
+# Replace with your repo name if using project pages (e.g. /ai-tools-hub)
+# baseurl: "/ai-tools-hub"
+
+timezone: Europe/Berlin
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from build
+exclude:
+  - scripts/
+  - requirements.txt
+  - SETUP.md
+  - "*.py"
+  - Gemfile
+  - Gemfile.lock
+  - .github/
+
+# Pagination
+paginate: 10
+paginate_path: "/page:num/"
+
+# Post defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: SmartAI Picks
+
+# Feed
+feed:
+  path: feed.xml

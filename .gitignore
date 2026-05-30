@@ -1,0 +1,10 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+*.gem
+Gemfile.lock
+.env
+__pycache__/
+*.pyc
+.DS_Store

@@ -1,0 +1,60 @@
+---
+layout: default
+---
+<div class="home-container">
+  <div class="container">
+
+    <section class="hero">
+      <h1>Honest AI Tool Reviews</h1>
+      <p>We test and compare AI tools so you don't have to waste money on the wrong ones.</p>
+    </section>
+
+    <section class="featured-tools">
+      <h2>Our Top Picks</h2>
+      <div class="tool-cards">
+        <div class="tool-card">
+          <div class="tool-badge">Writing</div>
+          <h3>Jasper AI</h3>
+          <p>Best for content teams and professional bloggers.</p>
+          <a href="#" class="cta-button" rel="nofollow sponsored">Try Free →</a>
+        </div>
+        <div class="tool-card">
+          <div class="tool-badge">Budget Pick</div>
+          <h3>Writesonic</h3>
+          <p>Most affordable AI writer with good quality output.</p>
+          <a href="#" class="cta-button" rel="nofollow sponsored">Try Free →</a>
+        </div>
+        <div class="tool-card">
+          <div class="tool-badge">Editing</div>
+          <h3>Grammarly</h3>
+          <p>The gold standard for grammar, style, and clarity.</p>
+          <a href="#" class="cta-button" rel="nofollow sponsored">Try Free →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="posts-section">
+      <h2>Latest Reviews & Comparisons</h2>
+      <div class="post-grid">
+        {% for post in site.posts %}
+          <article class="post-card">
+            <div class="post-card-meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+            </div>
+            <h3 class="post-card-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+            {% if post.description %}
+              <p class="post-card-excerpt">{{ post.description | truncate: 120 }}</p>
+            {% else %}
+              <p class="post-card-excerpt">{{ post.content | strip_html | truncate: 120 }}</p>
+            {% endif %}
+            <a href="{{ post.url | relative_url }}" class="read-more">Read review →</a>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    {{ content }}
+  </div>
+</div>
