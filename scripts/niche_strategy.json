@@ -7,7 +7,6 @@
     "SEO tools"
   ],
   "pending_keywords": [
-    "Grammarly vs QuillBot comparison",
     "best free AI writing tools",
     "Notion AI review worth it",
     "best AI tools for small business owners",
@@ -118,7 +117,8 @@
     "Writesonic vs Jasper AI comparison",
     "best AI tools for content creators",
     "ChatGPT alternatives free 2025",
-    "best AI for writing emails"
+    "best AI for writing emails",
+    "Grammarly vs QuillBot comparison"
   ],
   "performance_data": {
     "best AI writing assistant for bloggers 2025": {
@@ -153,6 +153,11 @@
     },
     "best AI for writing emails": {
       "published": "2026-06-12",
+      "clicks": 0,
+      "conversions": 0
+    },
+    "Grammarly vs QuillBot comparison": {
+      "published": "2026-06-15",
       "clicks": 0,
       "conversions": 0
     }
