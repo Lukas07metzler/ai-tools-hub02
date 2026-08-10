@@ -7,7 +7,6 @@
     "SEO tools"
   ],
   "pending_keywords": [
-    "Hemingway Editor vs Grammarly",
     "best AI research tools for writers",
     "AI tools for email marketing",
     "best AI summarizer tools",
@@ -271,7 +270,8 @@
     "Claude AI vs ChatGPT which is better",
     "best AI tools for freelancers",
     "AI writing tools that pass AI detection",
-    "best AI for long form content"
+    "best AI for long form content",
+    "Hemingway Editor vs Grammarly"
   ],
   "performance_data": {
     "best AI writing assistant for bloggers 2025": {
@@ -426,6 +426,11 @@
     },
     "best AI for long form content": {
       "published": "2026-08-07",
+      "clicks": 0,
+      "conversions": 0
+    },
+    "Hemingway Editor vs Grammarly": {
+      "published": "2026-08-10",
       "clicks": 0,
       "conversions": 0
     }
