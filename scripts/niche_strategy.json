@@ -7,7 +7,6 @@
     "SEO tools"
   ],
   "pending_keywords": [
-    "AI tools for email marketing",
     "best AI summarizer tools",
     "Copy.ai vs Writesonic 2025",
     "best AI for creating social media posts",
@@ -271,7 +270,8 @@
     "AI writing tools that pass AI detection",
     "best AI for long form content",
     "Hemingway Editor vs Grammarly",
-    "best AI research tools for writers"
+    "best AI research tools for writers",
+    "AI tools for email marketing"
   ],
   "performance_data": {
     "best AI writing assistant for bloggers 2025": {
@@ -436,6 +436,11 @@
     },
     "best AI research tools for writers": {
       "published": "2026-08-12",
+      "clicks": 0,
+      "conversions": 0
+    },
+    "AI tools for email marketing": {
+      "published": "2026-08-14",
       "clicks": 0,
       "conversions": 0
     }
